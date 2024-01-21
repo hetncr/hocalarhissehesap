@@ -177,9 +177,9 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"Hisse Fiyatı:", {kapanıs}, box = True)
-        st.write(f"Hisse F/K Oranı:", {fk_value}, box = True)
-        st.write(f"Hisse PD/DD Oranı:", {pd_value}, box = True)
+        st.write(f"Hisse Fiyatı: {kapanıs}", box = True)
+        st.write(f"Hisse F/K Oranı: {fk_value}", box = True)
+        st.write(f"Hisse PD/DD Oranı: {pd_value}", box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı: {fk_value}")
         #print(f"{stock_name} PD/DD Oranı: {pd_value}")
@@ -254,10 +254,10 @@ elif operation == "P/D Hedef Fiyat":
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.text_area(f"F/K HEDEF FİYAT: {fk_hedef_fiyat:,.2f}")
+  st.write(f"F/K HEDEF FİYAT: {fk_hedef_fiyat:,.2f}")
 
 elif operation == "P/D Hedef Fiyat":
-  st.text_area(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
+  st.write(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
 
 #elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   #st.text_area(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
