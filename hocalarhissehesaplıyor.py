@@ -183,9 +183,9 @@ if stock_name in hisse_oran:
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı: {fk_value}")
         #print(f"{stock_name} PD/DD Oranı: {pd_value}")
-        st.text_area(f"Özkaynaklar:", {float(ozkaynaklar1):,.2f}, box = True)
-        st.text_area(f"Ödenmiş Sermaye:", {float(OdenmisSermaye):,.2f}, box = True)
-        st.text_area(f"Net Dönem Karı:", {float(NetDonemKarı):,.2f}, box = True)
+        st.text_area(f"Özkaynaklar:" {float(ozkaynaklar1):,.2f}, box = True)
+        st.text_area(f"Ödenmiş Sermaye:" {float(OdenmisSermaye):,.2f}, box = True)
+        st.text_area(f"Net Dönem Karı:" {float(NetDonemKarı):,.2f}, box = True)
     except KeyError:
         #print("Hisse bulunamadı.") # Stock not found in the dictionary
         st.write("Hisse bulunamadı.")
