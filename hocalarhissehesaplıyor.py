@@ -193,6 +193,8 @@ else:
     #print("Bir sorun var!")  # Stock not found in any of the dictionaries
     st.write("İşlem yapılıyor!")
 
+st.write("Sektör Ortalamaları için tıklayın: https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5"
+
 #import streamlit_tags as tags
 
 st.write("Hisse Hedef Fiyat Hesaplayıcı")
@@ -257,13 +259,13 @@ if operation == "F/K Hedef Fiyat":
 elif operation == "P/D Hedef Fiyat":
   st.write(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
 
-#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  #st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
+elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
-#elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
-  #if c10 != 0:
-    #ozsermaye_hf = (c7/c8)*10/c11*c3
-    #st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
+elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
+  if c10 != 0:
+    ozsermaye_hf = (c7/c8)*10/c11*c3
+    st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
 
 #if __name__ == "__main__":
 #  st.run()
