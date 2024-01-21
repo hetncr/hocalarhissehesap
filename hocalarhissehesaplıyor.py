@@ -193,7 +193,7 @@ else:
     #print("Bir sorun var!")  # Stock not found in any of the dictionaries
     st.write("İşlem yapılıyor!")
 
-st.write("Sektör Ortalamaları için tıklayın: https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5"
+st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5)")
 
 #import streamlit_tags as tags
 
