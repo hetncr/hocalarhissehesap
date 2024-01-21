@@ -177,15 +177,15 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.text_area(f"Hisse Fiyatı: {kapanıs}", box = True)
-        st.text_area(f"Hisse F/K Oranı: {fk_value}", box = True)
-        st.text_area(f"Hisse PD/DD Oranı: {pd_value}", box = True)
+        st.text_area(f"Hisse Fiyatı:", {kapanıs}, box = True)
+        st.text_area(f"Hisse F/K Oranı:", {fk_value}, box = True)
+        st.text_area(f"Hisse PD/DD Oranı:", {pd_value}, box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı: {fk_value}")
         #print(f"{stock_name} PD/DD Oranı: {pd_value}")
-        st.text_area(f"Özkaynaklar: {float(ozkaynaklar1):,.2f}", box = True)
-        st.text_area(f"Ödenmiş Sermaye: {float(OdenmisSermaye):,.2f}", box = True)
-        st.text_area(f"Net Dönem Karı: {float(NetDonemKarı):,.2f}", box = True)
+        st.text_area(f"Özkaynaklar:", {float(ozkaynaklar1):,.2f}, box = True)
+        st.text_area(f"Ödenmiş Sermaye:", {float(OdenmisSermaye):,.2f}, box = True)
+        st.text_area(f"Net Dönem Karı:", {float(NetDonemKarı):,.2f}, box = True)
     except KeyError:
         #print("Hisse bulunamadı.") # Stock not found in the dictionary
         st.write("Hisse bulunamadı.")
