@@ -288,11 +288,11 @@ elif operation == "P/D Hedef Fiyat":
   else:
     pd_hedef_fiyat = 0
 
-#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  #if c4 != 0:
-    #odenmis_hedef_fiyat = (c7 / c4) * c10
-  #else:
-    #odenmis_hedef_fiyat = 0
+elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  if c4 != 0:
+    odenmis_hedef_fiyat = (c7 / c4) * c10
+  else:
+    odenmis_hedef_fiyat = 0
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
