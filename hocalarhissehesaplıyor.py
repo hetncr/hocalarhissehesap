@@ -177,15 +177,15 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"{stock_name} Hisse Fiyatı: {kapanıs}", box = True)
-        st.write(f"{stock_name} F/K Oranı: {fk_value}", box = True)
-        st.write(f"{stock_name} PD/DD Oranı: {pd_value}", box = True)
+        st.text_area(f"{stock_name} Hisse Fiyatı: {kapanıs}", box = True)
+        st.text_area(f"{stock_name} F/K Oranı: {fk_value}", box = True)
+        st.text_area(f"{stock_name} PD/DD Oranı: {pd_value}", box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı: {fk_value}")
         #print(f"{stock_name} PD/DD Oranı: {pd_value}")
-        st.write(f"Özkaynaklar: {float(ozkaynaklar1):,.2f}", box = True)
-        st.write(f"Ödenmiş Sermaye: {float(OdenmisSermaye):,.2f}", box = True)
-        st.write(f"Net Dönem Karı: {float(NetDonemKarı):,.2f}", box = True)
+        st.text_area(f"Özkaynaklar: {float(ozkaynaklar1):,.2f}", box = True)
+        st.text_area(f"Ödenmiş Sermaye: {float(OdenmisSermaye):,.2f}", box = True)
+        st.text_area(f"Net Dönem Karı: {float(NetDonemKarı):,.2f}", box = True)
     except KeyError:
         #print("Hisse bulunamadı.") # Stock not found in the dictionary
         st.write("Hisse bulunamadı.")
@@ -246,26 +246,26 @@ elif operation == "P/D Hedef Fiyat":
   else:
     pd_hedef_fiyat = 0
 
-elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  if c4 != 0:
-    odenmis_hedef_fiyat = (c7 / c4) * c10
-  else:
-    odenmis_hedef_fiyat = 0
+#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  #if c4 != 0:
+    #odenmis_hedef_fiyat = (c7 / c4) * c10
+  #else:
+    #odenmis_hedef_fiyat = 0
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.write(f"F/K HEDEF FİYAT: {fk_hedef_fiyat:,.2f}")
+  st.text_area(f"F/K HEDEF FİYAT: {fk_hedef_fiyat:,.2f}")
 
 elif operation == "P/D Hedef Fiyat":
-  st.write(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
+  st.text_area(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
 
-elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
+#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  #st.text_area(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
-elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
-  if c10 != 0:
-    ozsermaye_hf = (c7/c8)*10/c11*c3
-    st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
+#elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
+  #if c10 != 0:
+    #ozsermaye_hf = (c7/c8)*10/c11*c3
+    #st.text_area(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
 
 #if __name__ == "__main__":
 #  st.run()
