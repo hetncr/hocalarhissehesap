@@ -180,7 +180,7 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"Hisse Fiyatı: {kapanıs}", box = True)
+        st.write(f"**Hisse Fiyatı:** {kapanıs}", box = True)
         st.write(f"Hisse F/K Oranı: {fk_value}", box = True)
         st.write(f"Hisse PD/DD Oranı: {pd_value}", box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
