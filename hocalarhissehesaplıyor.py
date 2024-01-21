@@ -213,9 +213,21 @@ else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
   st.write("İşlem yapılıyor!")
 
+
+if stock_name in hisse_oran:
+  try:
+    # Access the stock data and extract the F/K value
+    fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  
+    c10 = float(fk_value)
+  except KeyError:
+    #print("Hisse bulunamadı.") # Stock not found in the dictionary
+    st.write("Hisse bulunamadı.")
+else:
+  #print("Bir sorun var!") # Stock not found in any of the dictionaries
+  st.write("İşlem yapılıyor!")
 # Hisse F/K Oranı
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
-c10 = float(fk_value)
+#c10 = float(fk_value)
 
 # HİSSE PD/DD ORANI
 #c11 = st.number_input("Hisse PD/DD Oranı: ")
