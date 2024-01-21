@@ -152,8 +152,6 @@ for r in f_oranlar.find_all("tr"):
     hisse_oran[hisse_adi_1] = {"kapanıs": kapanıs, "f_k": f_k, "pd_dd": pd_dd}
 
 # Get the stock name from the user
-#hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
-#hisse_adi = hisse_input
 stock_name = hisse_adi #input("Hisse Adı Giriniz: ").upper()
 
 if stock_name:
