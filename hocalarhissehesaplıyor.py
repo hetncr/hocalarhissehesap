@@ -198,6 +198,7 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 #import streamlit_tags as tags
 
 st.write("Hisse Hedef Fiyat Hesaplayıcı")
+
 # Hisse Fiyatı
 #c3 = st.number_input("Hisse Fiyatı:" )
 #c3 = float(kapanıs)
@@ -213,7 +214,7 @@ else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
   st.write("İşlem yapılıyor!")
 
-
+# Hisse F/K Oranı
 if stock_name in hisse_oran:
   try:
     # Access the stock data and extract the F/K value
@@ -225,11 +226,21 @@ if stock_name in hisse_oran:
 else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
   st.write("İşlem yapılıyor!")
-# Hisse F/K Oranı
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
 #c10 = float(fk_value)
 
 # HİSSE PD/DD ORANI
+if stock_name in hisse_oran:
+  try:
+    # Access the stock data and extract the F/K value
+    pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
+    c11 = float(pd_value)
+  except KeyError:
+    #print("Hisse bulunamadı.") # Stock not found in the dictionary
+    st.write("Hisse bulunamadı.")
+else:
+  #print("Bir sorun var!") # Stock not found in any of the dictionaries
+  st.write("İşlem yapılıyor!")
 #c11 = st.number_input("Hisse PD/DD Oranı: ")
 c11 = float(pd_value)
 
