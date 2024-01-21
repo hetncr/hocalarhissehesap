@@ -228,7 +228,7 @@ c3 = float(kapanıs)
  # st.write()
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
 c10 = float(fk_value)
-if c10 =< 0:
+if c10 <= 0:
   st.write("F/K Değeri Bulunmamaktadır!")
 
 # HİSSE PD/DD ORANI
