@@ -225,7 +225,7 @@ if stock_name in hisse_oran:
     st.write("Hisse bulunamadı.")
 else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
-  st.write("İşlem yapılıyor!")
+  st.write()
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
 #c10 = float(fk_value)
 
@@ -240,9 +240,9 @@ if stock_name in hisse_oran:
     st.write("Hisse bulunamadı.")
 else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
-  st.write("İşlem yapılıyor!")
+  st.write()
 #c11 = st.number_input("Hisse PD/DD Oranı: ")
-c11 = float(pd_value)
+#c11 = float(pd_value)
 
 # BİST100 /SEKTÖR GÜNCEL F/K ORANI
 c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
