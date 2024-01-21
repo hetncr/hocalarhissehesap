@@ -200,49 +200,49 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 st.write("Hisse Hedef Fiyat Hesaplayıcı")
 
 # Hisse Fiyatı
-#c3 = st.number_input("Hisse Fiyatı:" )
-#c3 = float(kapanıs)
-if stock_name in hisse_oran:
-  try:
+c3 = st.number_input("Hisse Fiyatı:" )
+c3 = float(kapanıs)
+#if stock_name in hisse_oran:
+  #try:
     # Access the stock data and extract the F/K value
-    kapanıs = hisse_oran[stock_name]["kapanıs"]
-    c3 = float(kapanıs)
-  except KeyError:
+    #kapanıs = hisse_oran[stock_name]["kapanıs"]
+    #c3 = float(kapanıs)
+ # except KeyError:
     #print("Hisse bulunamadı.") # Stock not found in the dictionary
-    st.write("Hisse bulunamadı.")
-else:
+    #st.write("Hisse bulunamadı.")
+#else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
-  st.write("İşlem yapılıyor!")
+ # st.write("İşlem yapılıyor!")
 
 # Hisse F/K Oranı
-if stock_name in hisse_oran:
-  try:
+#if stock_name in hisse_oran:
+ # try:
     # Access the stock data and extract the F/K value
-    fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  
-    c10 = float(fk_value)
-  except KeyError:
+   # fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  
+  #  c10 = float(fk_value)
+#  except KeyError:
     #print("Hisse bulunamadı.") # Stock not found in the dictionary
-    st.write("Hisse bulunamadı.")
-else:
+   # st.write("Hisse bulunamadı.")
+#else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
-  st.write()
-#c10 = float(st.number_input("Hisse F/K Oranı:"))
-#c10 = float(fk_value)
+ # st.write()
+c10 = float(st.number_input("Hisse F/K Oranı:"))
+c10 = float(fk_value)
 
 # HİSSE PD/DD ORANI
-if stock_name in hisse_oran:
-  try:
+#if stock_name in hisse_oran:
+ # try:
     # Access the stock data and extract the F/K value
-    pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-    c11 = float(pd_value)
-  except KeyError:
+   # pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
+  #  c11 = float(pd_value)
+#  except KeyError:
     #print("Hisse bulunamadı.") # Stock not found in the dictionary
-    st.write("Hisse bulunamadı.")
-else:
+ #   st.write("Hisse bulunamadı.")
+#else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
-  st.write()
-#c11 = st.number_input("Hisse PD/DD Oranı: ")
-#c11 = float(pd_value)
+#  st.write()
+c11 = st.number_input("Hisse PD/DD Oranı: ")
+c11 = float(pd_value)
 
 # BİST100 /SEKTÖR GÜNCEL F/K ORANI
 c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
