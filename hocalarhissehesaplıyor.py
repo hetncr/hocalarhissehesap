@@ -147,8 +147,11 @@ for r in f_oranlar.find_all("tr"):
     hucre = r.find_all("td")
     hisse_adi_1 = hucre[0].find("a").text.upper()
     kapanıs = hucre[1].text
+    c3 = float(kapanıs)
     f_k = hucre[2].text
+    c10 = float(fk_value)
     pd_dd = hucre[5].text
+    c11 = float(pd_value)
     hisse_oran[hisse_adi_1] = {"kapanıs": kapanıs, "f_k": f_k, "pd_dd": pd_dd}
 
 # Get the stock name from the user
