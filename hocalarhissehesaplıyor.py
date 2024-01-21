@@ -160,7 +160,7 @@ if stock_name:
         # Get the sector name from the dictionary
         sektor_output = hisse_sektor[stock_name]
         # Display the sector name
-        st.text_area("Sektör Alanı:", sektor_output, height= 10)
+        st.write("Sektör Alanı:", sektor_output)
         #print("Sektör Alanı:", sektor_output)
         # Get the sector row number from the dictionary
         sektor_numarasi = sektor_numara[sektor_output]
