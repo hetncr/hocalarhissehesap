@@ -20,8 +20,8 @@ st.subheader("Road to Kıbrıs :airplane_departure: :sunglasses:")
 
 
 # Kullanıcıdan hisse senedi adı almak için input fonksiyonu kullanın
-#hisse_adi = input("Hisse Adı: ").upper()
-hisse_input = st.text_input("Hisse Adı:").upper()
+#hisse_adi = input("Hisse Adı : ").upper()
+hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
 hisse_adi = hisse_input
 
 # hisse_adi değişkenini url1 değişkeninde hisse parametresine atayın
