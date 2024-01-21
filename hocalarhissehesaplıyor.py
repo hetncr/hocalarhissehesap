@@ -200,7 +200,7 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 st.write("Hisse Hedef Fiyat Hesaplayıcı")
 
 # Hisse Fiyatı
-c3 = st.number_input("Hisse Fiyatı:" )
+#c3 = st.number_input("Hisse Fiyatı:" )
 c3 = float(kapanıs)
 #if stock_name in hisse_oran:
   #try:
@@ -226,7 +226,7 @@ c3 = float(kapanıs)
 #else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
  # st.write()
-c10 = float(st.number_input("Hisse F/K Oranı:"))
+#c10 = float(st.number_input("Hisse F/K Oranı:"))
 c10 = float(fk_value)
 
 # HİSSE PD/DD ORANI
@@ -241,7 +241,7 @@ c10 = float(fk_value)
 #else:
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
 #  st.write()
-c11 = st.number_input("Hisse PD/DD Oranı: ")
+#c11 = st.number_input("Hisse PD/DD Oranı: ")
 c11 = float(pd_value)
 
 # BİST100 /SEKTÖR GÜNCEL F/K ORANI
