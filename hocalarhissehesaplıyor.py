@@ -21,8 +21,8 @@ st.subheader("Road to Kıbrıs :airplane_departure: :sunglasses:")
 
 # Kullanıcıdan hisse senedi adı almak için input fonksiyonu kullanın
 #hisse_adi = input("Hisse Adı : ").upper()
-hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
-hisse_adi = hisse_input
+#hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
+#hisse_adi = hisse_input
 
 # hisse_adi değişkenini url1 değişkeninde hisse parametresine atayın
 url1="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+hisse_adi
@@ -152,6 +152,8 @@ for r in f_oranlar.find_all("tr"):
     hisse_oran[hisse_adi_1] = {"kapanıs": kapanıs, "f_k": f_k, "pd_dd": pd_dd}
 
 # Get the stock name from the user
+hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
+hisse_adi = hisse_input
 stock_name = hisse_adi #input("Hisse Adı Giriniz: ").upper()
 
 if stock_name:
