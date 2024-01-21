@@ -209,8 +209,9 @@ c10 = float(fk_value)
 c11 = float(pd_value)
 
 st.write("Sektör Ortalamaları için tıklayın: https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5"
+
 # BİST100 /SEKTÖR GÜNCEL F/K ORANI
-c12 = st.number_input("BİST100 / Sektör Güncel F/K Oranı: ")
+c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
 
 # BIST100 / Sektör Güncel P/D Oranı
 c13 = float(st.number_input("BİST100 / Sektör Güncel PD/DD Oranı:"))
