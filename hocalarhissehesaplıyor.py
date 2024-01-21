@@ -200,7 +200,7 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 
 #import streamlit_tags as tags
 
-st.write("Hisse Hedef Fiyat Hesaplayıcı")
+#st.write("Hisse Hedef Fiyat Hesaplayıcı")
 
 # Hisse Fiyatı
 #c3 = st.number_input("Hisse Fiyatı:" )
@@ -270,6 +270,9 @@ c8 = float(ozkaynaklar1)
 # Güncel Piyasa Değeri
 #c9 = st.number_input("Güncel Piyasa Değeri: ")
 
+
+st.write("**HİSSE HEDEF FİYAT HESAPLAYICI**")
+
 operation = st.selectbox("İşlem Seçimi:", ["F/K Hedef Fiyat", "P/D Hedef Fiyat", "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
 
 # Calculate the target price based on the selected operation
@@ -293,18 +296,18 @@ elif operation == "P/D Hedef Fiyat":
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.write(f"F/K HEDEF FİYAT: {fk_hedef_fiyat:,.2f}")
+  st.write(f"**F/K HEDEF FİYAT:** {fk_hedef_fiyat:,.2f}")
 
 elif operation == "P/D Hedef Fiyat":
-  st.write(f"P/D HEDEF FİYAT: {pd_hedef_fiyat:,.2f}")
+  st.write(f"**P/D HEDEF FİYAT:** {pd_hedef_fiyat:,.2f}")
 
-#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  #st.text_area(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
+elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
-#elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
-  #if c10 != 0:
-    #ozsermaye_hf = (c7/c8)*10/c11*c3
-    #st.text_area(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
+elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
+  if c10 != 0:
+    ozsermaye_hf = (c7/c8)*10/c11*c3
+    st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
 
 #if __name__ == "__main__":
 #  st.run()
