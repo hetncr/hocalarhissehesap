@@ -200,7 +200,18 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 st.write("Hisse Hedef Fiyat Hesaplayıcı")
 # Hisse Fiyatı
 #c3 = st.number_input("Hisse Fiyatı:" )
-c3 = float(kapanıs)
+#c3 = float(kapanıs)
+if stock_name in hisse_oran:
+  try:
+    # Access the stock data and extract the F/K value
+    kapanıs = hisse_oran[stock_name]["kapanıs"]
+    c3 = float(kapanıs)
+  except KeyError:
+    #print("Hisse bulunamadı.") # Stock not found in the dictionary
+    st.write("Hisse bulunamadı.")
+else:
+  #print("Bir sorun var!") # Stock not found in any of the dictionaries
+  st.write("İşlem yapılıyor!")
 
 # Hisse F/K Oranı
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
