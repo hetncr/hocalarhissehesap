@@ -258,7 +258,7 @@ c13 = float(st.number_input("BİST100 / Sektör Güncel PD/DD Oranı:"))
 # Ödenmiş Sermaye
 #c4 = st.number_input("Ödenmiş Sermaye: ")
 #c4 = float(OdenmisSermaye)
-c4 = {float(OdenmisSermaye):,.2f}
+c4 = float({(OdenmisSermaye):,.2f})
 st.write("Ödenmiş Sermaye:" c4)
 
 # Yıllık Net Kar
