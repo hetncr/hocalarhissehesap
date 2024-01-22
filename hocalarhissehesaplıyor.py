@@ -26,7 +26,7 @@ hisse_adi = hisse_input
 
 # hisse_adi değişkenini url1 değişkeninde hisse parametresine atayın
 url1="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+hisse_adi
-time.sleep(0.01)
+#time.sleep(0.01)
 # web sitesinden yıl ve dönem bilgilerini çekmek için BeautifulSoup kullanın
 r1=requests.get(url1)
 s1=BeautifulSoup(r1.text, "html.parser")
