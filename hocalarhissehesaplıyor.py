@@ -25,7 +25,7 @@ hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Giri
 hisse_adi = hisse_input
 
 # hisse_adi değişkenini url1 değişkeninde hisse parametresine atayın
-url1="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+hisse_adi
+url1="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+"MIATK" #+hisse_adi
 
 # web sitesinden yıl ve dönem bilgilerini çekmek için BeautifulSoup kullanın
 r1=requests.get(url1)
