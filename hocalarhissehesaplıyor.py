@@ -305,7 +305,8 @@ c8 = float(ozkaynaklar1)
 #c9 = st.number_input("Güncel Piyasa Değeri: ")
 
 # HİSSE HESAPLAYICISI SELECT BOX İLE F/K VE PD/DD ORANLARINA GÖRE HESAPLAMA
-st.write("**HİSSE HEDEF FİYAT HESAPLAYICI**")
+#st.write("**HİSSE HEDEF FİYAT HESAPLAYICI**")
+st.subheader("**HİSSE HEDEF FİYAT HESAPLAYICI**", divider='rainbow')
 
 operation = st.selectbox("İşlem Seçimi:", ["F/K Hedef Fiyat", "P/D Hedef Fiyat"])
 
