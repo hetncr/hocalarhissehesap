@@ -286,7 +286,7 @@ c4 = OdenmisSermaye
 # Yıllık Net Kar
 #c7 = st.number_input("Yıllık Net Kar: ")
 #C7 = float(NetDonemKarı)
-c7 = NetDonemKarı)
+c7 = NetDonemKarı
 
 # Özsermaye
 #c8 = st.number_input("Özsermaye : ")
