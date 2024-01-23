@@ -198,7 +198,7 @@ if stock_name:
 if stock_name in hisse_oran:
     try:
         # Access the stock data and extract the F/K value
-        kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
+        kapanıs = hisse_oran[stock_name]["kapanıs"] #.replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
         st.write(f"	:chart:**:blue[HİSSE FİYATI:]**  {kapanıs}") #, box = True)
