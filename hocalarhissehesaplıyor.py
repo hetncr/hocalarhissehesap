@@ -344,8 +344,8 @@ operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF 
 if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   if c4 != 0:
     odenmis_hedef_fiyat = (c7 / c4) * c10
-  else:
-    odenmis_hedef_fiyat = 0
+  #else:
+    #odenmis_hedef_fiyat = 0
     st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 #elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   #st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
