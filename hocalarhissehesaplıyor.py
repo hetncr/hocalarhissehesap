@@ -383,7 +383,7 @@ ortalama_hesap = ( fk_hedef_fiyat + pd_hedef_fiyat + odenmis_hedef_fiyat + ozser
 #st.write(ortalama_hesap)
 if ortalama_hesap < kapanıs :
   st.write(f"**TÜM HESAPLAMALARIN ORTALAMA FİYATI:** :red[{ortalama_hesap:,.2f}]")
-else
+else : 
   st.write(f"**TÜM HESAPLAMALARIN ORTALAMA FİYATI:** :green[{ortalama_hesap:,.2f}]")
 
 #if __name__ == "__main__":
