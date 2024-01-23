@@ -227,7 +227,7 @@ st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatir
 #c3 = st.number_input("Hisse Fiyatı:" )
 #c3 = float(kapanıs)
 c3 = float(kapanıs.replace(",", "."))  # Replace comma with dot
-c3 = float(c3)
+
 
 #if stock_name in hisse_oran:
   #try:
