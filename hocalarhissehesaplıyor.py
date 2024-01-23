@@ -188,8 +188,8 @@ if stock_name:
 
             # Print the results
             #print(sek_ortalama)
-            st.write(f"**Sektör F/K Oranı:**, {sek_ortalama_fk_float}", box=True)
-            st.write(f"**Sektör PD/DD Oranı:**, {sek_ortalama_pd_float}", box=True)
+            st.write(f"**Sektör F/K Oranı:**, {sek_ortalama_fk_float}") #, box=True)
+            st.write(f"**Sektör PD/DD Oranı:**, {sek_ortalama_pd_float}")#, box=True)
         else:
             print("Error: Elements not found. Check website structure or selectors.")
 
@@ -201,15 +201,15 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"**HİSSE FİYATI:**  {kapanıs}", box = True)
-        st.write(f"**HİSSE F/K ORANI:**  {fk_value}", box = True)
-        st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}", box = True)
+        st.write(f"**HİSSE FİYATI:**  {kapanıs}") #, box = True)
+        st.write(f"**HİSSE F/K ORANI:**  {fk_value}") #, box = True)
+        st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}") #, box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı:  {fk_value}")
         #print(f"{stock_name} PD/DD Oranı:  {pd_value}")
-        st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.2f}", box = True)
-        st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.2f}", box = True)
-        st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.2f}", box = True)
+        st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.2f}) #", box = True)
+        st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.2f}") #, box = True)
+        st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.2f}") #, box = True)
     except KeyError:
         #print("Hisse bulunamadı.") # Stock not found in the dictionary
         st.write("Hisse bulunamadı.")
@@ -225,7 +225,9 @@ st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.
 
 # Hisse Fiyatı
 #c3 = st.number_input("Hisse Fiyatı:" )
-c3 = float(kapanıs)
+#c3 = float(kapanıs)
+c3 = float(kapanıs.replace(",", "."))  # Replace comma with dot
+
 #if stock_name in hisse_oran:
   #try:
     # Access the stock data and extract the F/K value
