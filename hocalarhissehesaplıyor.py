@@ -307,7 +307,7 @@ c8 = float(ozkaynaklar1)
 # HİSSE HESAPLAYICISI SELECT BOX İLE F/K VE PD/DD ORANLARINA GÖRE HESAPLAMA
 st.write("**HİSSE HEDEF FİYAT HESAPLAYICI**")
 
-operation = st.selectbox("İşlem Seçimi:", ["F/K Hedef Fiyat", "P/D Hedef Fiyat", "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
+operation = st.selectbox("İşlem Seçimi:", ["F/K Hedef Fiyat", "P/D Hedef Fiyat"])
 
 # Calculate the target price based on the selected operation
 if operation == "F/K Hedef Fiyat":
@@ -338,6 +338,8 @@ c7 = st.number_input("Yıllık Net Kar: ")
 
 # Özsermaye
 c8 = st.number_input("Özsermaye : ")
+
+operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
 
 if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   if c4 != 0:
