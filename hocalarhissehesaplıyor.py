@@ -346,8 +346,9 @@ if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
     odenmis_hedef_fiyat = (c7 / c4) * c10
   else:
     odenmis_hedef_fiyat = 0
-elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
+    st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
+#elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  #st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
 elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
   if c10 != 0:
