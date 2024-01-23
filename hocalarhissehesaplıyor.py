@@ -332,16 +332,16 @@ elif operation == "P/D Hedef Fiyat":
 
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
-st.subheader(f":blue[MANUEL HİSSE HESAPLAMA BÖLÜMÜ]", divider='rainbow')
+st.subheader(f"**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
 
 # Ödenmiş Sermaye
-c4 = st.number_input("Ödenmiş Sermaye: ")
+c4 = st.number_input("**Ödenmiş Sermaye: **")
 
 # Yıllık Net Kar
-c7 = st.number_input("Yıllık Net Kar: ")
+c7 = st.number_input("**Yıllık Net Kar: **")
 
 # Özsermaye
-c8 = st.number_input("Özsermaye : ")
+c8 = st.number_input("**Özkaynaklar (Özsermaye):** ")
 
 operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
 
