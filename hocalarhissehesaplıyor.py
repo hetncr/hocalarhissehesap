@@ -339,7 +339,7 @@ c7 = st.number_input("Yıllık Net Kar: ")
 # Özsermaye
 c8 = st.number_input("Özsermaye : ")
 
-elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   if c4 != 0:
     odenmis_hedef_fiyat = (c7 / c4) * c10
   else:
