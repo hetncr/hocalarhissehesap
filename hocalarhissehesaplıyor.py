@@ -362,9 +362,10 @@ if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   #st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
 elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
-  if c10 != 0:
-    ozsermaye_hf = c7/(c8*10)/(c11*c3)
-    st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
+  #if c10 != 0:
+  ozsermaye_hf = (c7/c8)*10/c11*c3
+  st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
+
 elif operation == "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI":
   c21 = (c7*7)+(c8*0.5)
   potansiyel_fiyat = c21/c4 
