@@ -281,22 +281,22 @@ c13 = sek_ortalama_pd_float
 # Ödenmiş Sermaye
 #c4 = st.number_input("Ödenmiş Sermaye: ")
 #c4 = float(OdenmisSermaye)
-c4 = ("{float(OdenmisSermaye):,.2f}")
-#c4 = OdenmisSermaye
+#c4 = ("{float(OdenmisSermaye):,.2f}")
+c4 = OdenmisSermaye
 
 # Yıllık Net Kar
 #c7 = st.number_input("Yıllık Net Kar: ")
 #C7 = float(NetDonemKarı)
-c7 = ("{float(NetDonemKarı):,.2f}")
-#c7 = NetDonemKarı
-c15 = c7+c4
-st.write(f"{c15}", box=True)
+#c7 = ("{float(NetDonemKarı):,.2f}")
+c7 = NetDonemKarı
+c15 = c7*2
+st.write(c15)
 
 # Özsermaye
 #c8 = st.number_input("Özsermaye : ")
 #c8 = float(ozkaynaklar1)
-c8 = (f"{float(ozkaynaklar1):,.2f}")
-#c8 = ozkaynaklar1
+#c8 = (f"{float(ozkaynaklar1):,.2f}")
+c8 = ozkaynaklar1
 
 
 # Güncel Piyasa Değeri
