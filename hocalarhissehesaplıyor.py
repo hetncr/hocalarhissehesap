@@ -207,7 +207,7 @@ if stock_name in hisse_oran:
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
         #print(f"{stock_name} F/K Oranı:  {fk_value}")
         #print(f"{stock_name} PD/DD Oranı:  {pd_value}")
-        st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.2f}) #", box = True)
+        st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.2f}") #", box = True)
         st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.2f}") #, box = True)
         st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.2f}") #, box = True)
     except KeyError:
@@ -253,7 +253,7 @@ c3 = float(kapanıs.replace(",", "."))  # Replace comma with dot
   #print("Bir sorun var!") # Stock not found in any of the dictionaries
  # st.write()
 #c10 = float(st.number_input("Hisse F/K Oranı:"))
-c10 = float(fk_value)
+c10 = float(fk_value.replace(",", "."))
 if c10 <= 0:
   st.write("F/K Değeri Bulunmamaktadır!")
 
