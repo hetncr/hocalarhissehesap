@@ -329,10 +329,12 @@ if operation == "F/K Hedef Fiyat":
 
 elif operation == "P/D Hedef Fiyat":
   st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+st.write()
+st.write()
+st.write()
 
 
-
-st.write(":arrow_down:Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları içim Aşağıdaki Bölümü Kullanın:arrow_down:")
+st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları içim Aşağıdaki Bölümü Kullanın:arrow_down:")
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
