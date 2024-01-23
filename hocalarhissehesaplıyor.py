@@ -348,7 +348,7 @@ c7 = st.number_input("**Yıllık Net Kar:** ")
 # Özsermaye
 c8 = st.number_input("**Özkaynaklar (Özsermaye):** ")
 
-operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
+operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT", "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI")
 
 if operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   if c4 != 0:
