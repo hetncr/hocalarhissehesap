@@ -330,6 +330,9 @@ elif operation == "P/D Hedef Fiyat":
   st.write(f"**P/D HEDEF FİYAT:** {pd_hedef_fiyat:,.2f}")
 
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
+
+st.write(f"[MANUEL HİSSE HESAPLAMA BÖLÜMÜ]")
+
 # Ödenmiş Sermaye
 c4 = st.number_input("Ödenmiş Sermaye: ")
 
