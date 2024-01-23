@@ -188,8 +188,8 @@ if stock_name:
 
             # Print the results
             #print(sek_ortalama)
-            st.write(f"**Sektör F/K Oranı:**, {sek_ortalama_fk_float}") #, box=True)
-            st.write(f"**Sektör PD/DD Oranı:**, {sek_ortalama_pd_float}")#, box=True)
+            st.write(f"**Sektör F/K Oranı:** {sek_ortalama_fk_float}") #, box=True)
+            st.write(f"**Sektör PD/DD Oranı:** {sek_ortalama_pd_float}")#, box=True)
         else:
             print("Error: Elements not found. Check website structure or selectors.")
 
@@ -201,7 +201,7 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"**HİSSE FİYATI:**  {kapanıs}") #, box = True)
+        st.write(f":green[**HİSSE FİYATI:]**  {kapanıs}") #, box = True)
         st.write(f"**HİSSE F/K ORANI:**  {fk_value}") #, box = True)
         st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}") #, box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
@@ -217,7 +217,7 @@ else:
     #print("Bir sorun var!")  # Stock not found in any of the dictionaries
     st.write("İşlem yapılıyor!")
 
-st.write(" Sektör Ortalamaları için Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5)")
+st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5)")
 
 #import streamlit_tags as tags
 
