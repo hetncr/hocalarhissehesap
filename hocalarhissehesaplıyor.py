@@ -339,14 +339,16 @@ st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlıl
 
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
 
+# Özsermaye
+c8 = st.number_input("**Özkaynaklar (Özsermaye):** ")
+
 # Ödenmiş Sermaye
 c4 = st.number_input("**Ödenmiş Sermaye:** ")
 
 # Yıllık Net Kar
 c7 = st.number_input("**Yıllık Net Kar:** ")
 
-# Özsermaye
-c8 = st.number_input("**Özkaynaklar (Özsermaye):** ")
+
 
 operation = st.selectbox("İşlem Seçimi:", ["ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT", "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI"])
 
