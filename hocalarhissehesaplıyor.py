@@ -324,10 +324,10 @@ elif operation == "P/D Hedef Fiyat":
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.write(f"**F/K HEDEF FİYAT:** {fk_hedef_fiyat:,.2f}")
+  st.write(f":red[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
 
 elif operation == "P/D Hedef Fiyat":
-  st.write(f"**P/D HEDEF FİYAT:** {pd_hedef_fiyat:,.2f}")
+  st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
 
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
