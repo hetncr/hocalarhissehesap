@@ -271,10 +271,12 @@ if c10 <= 0:
 c11 = float(pd_value)
 
 # BİST100 /SEKTÖR GÜNCEL F/K ORANI
-c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
+#c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
+c12 = sek_ortalama_fk_float
 
 # BIST100 / Sektör Güncel P/D Oranı
-c13 = float(st.number_input("BİST100 / Sektör Güncel PD/DD Oranı:"))
+#c13 = float(st.number_input("BİST100 / Sektör Güncel PD/DD Oranı:"))
+c13 = sek_ortalama_pd_float
 
 # Ödenmiş Sermaye
 #c4 = st.number_input("Ödenmiş Sermaye: ")
