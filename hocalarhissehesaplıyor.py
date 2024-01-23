@@ -325,10 +325,10 @@ elif operation == "P/D Hedef Fiyat":
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.write(f":red[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+  st.write(f":red[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}", divider='rainbow')
 
 elif operation == "P/D Hedef Fiyat":
-  st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+  st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}", divider='rainbow')
 st.write()
 st.write()
 st.write()
