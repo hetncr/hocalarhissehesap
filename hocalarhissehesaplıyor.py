@@ -172,6 +172,27 @@ if stock_name:
         # Make a new request with the updated url
         response = requests.get(url)
         temeldegerler = BeautifulSoup(response.text, "html.parser")
+        sek_ortalama = temeldegerler.find("sectorArea", id="sectorAreaBigData")
+        sek_ortalama = temeldegerler.find("div", id="sectorAreaBigData")
+        sek_ortalama_fk = temeldegerler.find("div", "second-item text-right")
+        sek_ortalama_pd = temeldegerler.find("div", "fifth-item text-right")
+        # Ensure elements are found before extracting values
+        if sek_ortalama_fk and sek_ortalama_pd:
+            # Get and clean the values
+            sek_ortalama_fk_value = sek_ortalama_fk.text.strip().replace(",", ".")
+            sek_ortalama_pd_value = sek_ortalama_pd.text.strip().replace(",", ".")
+
+            # Convert to floats
+            sek_ortalama_fk_float = float(sek_ortalama_fk_value)
+            sek_ortalama_pd_float = float(sek_ortalama_pd_value)
+
+            # Print the results
+            #print(sek_ortalama)
+            st.write(f"**Sektör F/K Oranı:**, {sek_ortalama_fk_float}", box=True)
+            st.write(f"**Sektör PD/DD Oranı:**, {sek_ortalama_pd_float}", box=True)
+        else:
+            print("Error: Elements not found. Check website structure or selectors.")
+
 
 # Check if the stock exists in the dictionary
 if stock_name in hisse_oran:
