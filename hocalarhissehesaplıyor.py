@@ -370,6 +370,9 @@ elif operation == "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI":
   c21 = (c7*7)+(c8*0.5)
   potansiyel_fiyat = c21/c4 
   st.write(f"POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI: {potansiyel_fiyat:,.2f}")
+
+ortalama_hesap = (fk_hedef_fiyat+pd_hedef_fiyat+odenmis_hedef_fiyat+ozsermaye_hf+potansiyel_fiyat)/5
+st.selectbox("**ORTALAMA HEDEF FİYAT:** ortalama_hesap")
 #if __name__ == "__main__":
 #  st.run()
 
