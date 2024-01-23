@@ -376,6 +376,7 @@ fk_hedef_fiyat = c3 / c10 * c12
 pd_hedef_fiyat = c3 / c11 * c13
 ozsermaye_hf = (c7/c8)*10/c11*c3
 odenmis_hedef_fiyat = (c7 / c4) * c10
+c21 = (c7*7)+(c8*0.5)
 potansiyel_fiyat = c21/c4 
 ortalama_hesap = ( fk_hedef_fiyat + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
 #if operation == "ORTALAMA HEDEF FİYAT":
