@@ -9,7 +9,7 @@ import pandas as pd
 
 
 #streamlit.config.theme.base = "dark"
-st.title("Hocalar Hisse Hesaplıyor  :chart:")
+st.title(:blue["Hocalar Hisse Hesaplıyor"]  :chart:")
 st.subheader("Road to Kıbrıs :airplane_departure: :sunglasses:", divider='rainbow')
 #st.set_page_config(
 # page_title="Hisse Hedef Fiyat Hesaplayıcı",
@@ -21,7 +21,7 @@ st.subheader("Road to Kıbrıs :airplane_departure: :sunglasses:", divider='rain
 
 # Kullanıcıdan hisse senedi adı almak için input fonksiyonu kullanın
 #hisse_adi = input("Hisse Adı : ").upper()
-hisse_input = st.text_input("Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):").upper()
+hisse_input = st.text_input("**Hisse Adı (Sadece Borsadaki Kısaltma Adını Girin):**").upper()
 hisse_adi = hisse_input
 
 # hisse_adi değişkenini url1 değişkeninde hisse parametresine atayın
