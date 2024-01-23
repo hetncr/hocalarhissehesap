@@ -372,8 +372,9 @@ elif operation == "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI":
   st.write(f"POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI: {potansiyel_fiyat:,.2f}")
 
 #operation = st.selectbox("[ORTALAMA HEDEF FİYAT]")
-ortalama_hesap = ({fk_hedef_fiyat}+{pd_hedef_fiyat}+{odenmis_hedef_fiyat}+{ozsermaye_hf}+{potansiyel_fiyat})/5
+ortalama_hesap = (fk_hedef_fiyat+pd_hedef_fiyat+odenmis_hedef_fiyat+ozsermaye_hf+potansiyel_fiyat)/5
 #if operation == "ORTALAMA HEDEF FİYAT":
+st.write(ortalama_hesap)
 st.write(f"**TÜM HESAPLAMALARIN ORTALAMA FİYATI:** {ortalama_hesap:,.2f}")
 #if __name__ == "__main__":
 #  st.run()
