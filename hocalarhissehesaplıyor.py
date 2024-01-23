@@ -365,7 +365,7 @@ elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
     st.write(f"ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT: {ozsermaye_hf:,.2f}")
 elif operation == "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI":
   c21 = (c7*7)+(c8*0.5)
-  potansiye_fiyat = c21/c4 
+  potansiyel_fiyat = c21/c4 
   st.write(f"POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI: {potansiyel_fiyat:,.2f}")
 #if __name__ == "__main__":
 #  st.run()
