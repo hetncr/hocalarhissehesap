@@ -287,7 +287,7 @@ c4 = float(OdenmisSermaye)
 #c7 = st.number_input("Yıllık Net Kar: ")
 C7 = float(NetDonemKarı)
 #c7 = NetDonemKarı
-c15 = (c7+c4)
+c15 = c7+c4
 st.write(c15)
 
 # Özsermaye
