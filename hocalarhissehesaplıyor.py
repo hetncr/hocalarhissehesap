@@ -304,7 +304,7 @@ c8 = float(ozkaynaklar1)
 # Güncel Piyasa Değeri
 #c9 = st.number_input("Güncel Piyasa Değeri: ")
 
-
+# HİSSE HESAPLAYICISI SELECT BOX İLE F/K VE PD/DD ORANLARINA GÖRE HESAPLAMA
 st.write("**HİSSE HEDEF FİYAT HESAPLAYICI**")
 
 operation = st.selectbox("İşlem Seçimi:", ["F/K Hedef Fiyat", "P/D Hedef Fiyat", "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT"])
@@ -322,12 +322,6 @@ elif operation == "P/D Hedef Fiyat":
   else:
     pd_hedef_fiyat = 0
 
-elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-  if c4 != 0:
-    odenmis_hedef_fiyat = (c7 / c4) * c10
-  else:
-    odenmis_hedef_fiyat = 0
-
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
   st.write(f"**F/K HEDEF FİYAT:** {fk_hedef_fiyat:,.2f}")
@@ -335,6 +329,21 @@ if operation == "F/K Hedef Fiyat":
 elif operation == "P/D Hedef Fiyat":
   st.write(f"**P/D HEDEF FİYAT:** {pd_hedef_fiyat:,.2f}")
 
+# MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
+# Ödenmiş Sermaye
+c4 = st.number_input("Ödenmiş Sermaye: ")
+
+# Yıllık Net Kar
+c7 = st.number_input("Yıllık Net Kar: ")
+
+# Özsermaye
+c8 = st.number_input("Özsermaye : ")
+
+elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
+  if c4 != 0:
+    odenmis_hedef_fiyat = (c7 / c4) * c10
+  else:
+    odenmis_hedef_fiyat = 0
 elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
   st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
 
