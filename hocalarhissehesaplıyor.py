@@ -291,8 +291,8 @@ c4 = float(OdenmisSermaye)
 C7 = float(NetDonemKarı.replace(",", "."))
 #c7 = ("{float(NetDonemKarı):,.2f}")
 #c7 = NetDonemKarı
-c15 = c7*2
-st.write(c15)
+#c15 = c7*2
+#st.write(c15)
 
 # Özsermaye
 #c8 = st.number_input("Özsermaye : ")
