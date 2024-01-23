@@ -288,7 +288,7 @@ c4 = float(OdenmisSermaye)
 C7 = float(NetDonemKarı)
 #c7 = NetDonemKarı
 c15 = c7+c4
-st.write(c15)
+st.write(f"{c15}", box=True)
 
 # Özsermaye
 #c8 = st.number_input("Özsermaye : ")
