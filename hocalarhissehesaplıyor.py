@@ -201,7 +201,7 @@ if stock_name in hisse_oran:
         kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
         fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
         pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-        st.write(f"**:green[HİSSE FİYATI:]**  {kapanıs}") #, box = True)
+        st.write(f"	:chart:**:blue[HİSSE FİYATI:]**  {kapanıs}") #, box = True)
         st.write(f"**HİSSE F/K ORANI:**  {fk_value}") #, box = True)
         st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}") #, box = True)
                 #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
@@ -325,10 +325,10 @@ elif operation == "P/D Hedef Fiyat":
 
 # Print the result of the selection
 if operation == "F/K Hedef Fiyat":
-  st.write(f":red[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}", divider='rainbow')
+  st.write(f":red[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
 
 elif operation == "P/D Hedef Fiyat":
-  st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}", divider='rainbow')
+  st.write(f":red[**P/D HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
 st.write()
 st.write()
 st.write()
