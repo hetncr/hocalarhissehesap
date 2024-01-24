@@ -217,8 +217,8 @@ else:
     #print("Bir sorun var!")  # Stock not found in any of the dictionaries
     st.write("İşlem yapılıyor!")
 
-st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/Temel-Degerler-Ve-Oranlar.aspx?#page-5)")
-
+st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/default.aspx)")
+st.write(" Tradingview Grafik Sayfası İçin Tıklayın: [link](https://tr.tradingview.com/chart/)")
 #import streamlit_tags as tags
 
 #st.write("Hisse Hedef Fiyat Hesaplayıcı")
@@ -335,11 +335,11 @@ st.write()
 st.write()
 
 
-st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları içim Aşağıdaki Bölümü Kullanın:arrow_down:")
+st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları için Aşağıdaki Bölümü Kullanın:arrow_down:")
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
-
+st.write(f"Aşağıdaki verileri kopyalayarak boşluktaki kısımlara yerleştirebilirsiniz:arrow_down:)
 st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.0f}") #", box = True)
 st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.0f}") #, box = True)
 st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.0f}")
