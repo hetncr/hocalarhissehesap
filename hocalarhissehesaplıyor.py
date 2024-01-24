@@ -363,6 +363,7 @@ if hisse_adi:
   operation = st.selectbox("İşlem Seçimi:", ["İŞLEM SEÇİN","ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT", "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI"])
   if operation == "İŞLEM SEÇİN":
     st.write(f"İŞLEM SEÇİN")
+    st.write(f":red[Aşağıdaki kırmızı uyarı yazısı veriler girilmediği için çıkmaktadır. Lütfen verileri girip yapmak istediğiniz işlemi seçin.]")
   elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
     if c4 != 0:
       odenmis_hedef_fiyat = (c7 / c4) * c10
