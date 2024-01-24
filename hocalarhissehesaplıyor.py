@@ -402,6 +402,7 @@ if hisse_adi:
 
 else:
   st.write(":arrow_up:","Lütfen Yukarıdaki Alana Hisse Yazınız",":arrow_up:")
+  st.write(":red[Bankalar İşleme Dahil Değildir]")
 
     #if __name__ == "__main__":
     #  st.run()
