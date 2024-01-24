@@ -351,13 +351,13 @@ if hisse_adi:
 
 
     # Özsermaye
-  c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**") #{float(ozkaynaklar1):,.0f}")
+  c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**",placeholder="Özkaynaklar (Özsermaye) tutarını bu alana yazın") #{float(ozkaynaklar1):,.0f}")
 
     # Ödenmiş Sermaye
-  c4 = st.number_input("**Ödenmiş Sermaye:** ")
+  c4 = st.number_input("**Ödenmiş Sermaye:**", placeholder="Ödenmiş Sermaye tutarını bu alana yazın")
 
     # Yıllık Net Kar
-  c7 = st.number_input("**Yıllık Net Kar:** ")
+  c7 = st.number_input("**Yıllık Net Kar:**", placeholder="Yıllık Net Kar tutarını bu alana yazın")
   
   
   operation = st.selectbox("İşlem Seçimi:", ["İŞLEM SEÇİN","ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT", "POTANSİYEL PİYASA DEĞERİNE GÖRE HİSSE FİYATI"])
