@@ -216,7 +216,7 @@ if hisse_adi:
           st.write("Hisse bulunamadı.")
   else:
       #print("Bir sorun var!")  # Stock not found in any of the dictionaries
-      st.write("İşlem yapılıyor!")
+      st.write(":red[Veri eksikliği var. Lütfen hisseyi kontrol ediniz!]")
 
   st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/default.aspx)")
   st.write(" Tradingview Grafik Sayfası İçin Tıklayın: [link](https://tr.tradingview.com/chart/)")
