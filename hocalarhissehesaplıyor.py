@@ -339,7 +339,7 @@ st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlıl
 # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
-st.write(f"Aşağıdaki verileri kopyalayarak boşluktaki kısımlara yerleştirebilirsiniz:arrow_down:)
+st.write(f"Aşağıdaki verileri kopyalayarak boşluktaki kısımlara yerleştirebilirsiniz:arrow_down:")
 st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.0f}") #", box = True)
 st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.0f}") #, box = True)
 st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.0f}")
