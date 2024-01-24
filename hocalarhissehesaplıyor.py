@@ -340,8 +340,12 @@ st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlıl
 
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
 
+st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.0f}") #", box = True)
+st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.0f}") #, box = True)
+st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.0f}")
+
 # Özsermaye
-c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**{float(ozkaynaklar1):,.0f}")
+c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**") #{float(ozkaynaklar1):,.0f}")
 
 # Ödenmiş Sermaye
 c4 = st.number_input("**Ödenmiş Sermaye:** ")
