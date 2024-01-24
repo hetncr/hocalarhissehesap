@@ -345,13 +345,13 @@ st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.0f}") #, box = True
 st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.0f}")
 
 # Özsermaye
-#c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**") #{float(ozkaynaklar1):,.0f}")
+c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**") #{float(ozkaynaklar1):,.0f}")
 
 # Ödenmiş Sermaye
-#c4 = st.number_input("**Ödenmiş Sermaye:** ")
+c4 = st.number_input("**Ödenmiş Sermaye:** ")
 
 # Yıllık Net Kar
-#c7 = st.number_input("**Yıllık Net Kar:** ")
+c7 = st.number_input("**Yıllık Net Kar:** ")
 
 
 
