@@ -341,7 +341,7 @@ st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlıl
 st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
 
 # Özsermaye
-c8 = st.number_input("**Özkaynaklar (Özsermaye):** {float(ozkaynaklar1):,.0f}")
+c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**{float(ozkaynaklar1):,.0f}")
 
 # Ödenmiş Sermaye
 c4 = st.number_input("**Ödenmiş Sermaye:** ")
