@@ -208,6 +208,7 @@ if stock_name in hisse_oran:
         #print(f"{stock_name} F/K Oranı:  {fk_value}")
         #print(f"{stock_name} PD/DD Oranı:  {pd_value}")
         st.write(f"**ÖZKAYNAKLAR:**  {float(ozkaynaklar1):,.0f}") #", box = True)
+        st.markdown(float(ozkaynaklar1):,.0f})
         st.write(f"**ÖDENMİŞ SERMAYE:**  {float(OdenmisSermaye):,.0f}") #, box = True)
         st.write(f"**NET DÖNEM KARI:**  {float(NetDonemKarı):,.0f}") #, box = True)
     except KeyError:
