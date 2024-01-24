@@ -340,7 +340,7 @@ if hisse_adi:
   st.write()
 
 
-  st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları içim Aşağıdaki Bölümü Kullanın:arrow_down:")
+  st.write("Not: Ödenmiş Sermaye, Özsermaye Karlılığı ve Potansiyel Karlılık Hedef Fiyat Hesaplamaları İçin Aşağıdaki Bölümü Kullanın:arrow_down:")
   # MANUEL VERİ GİRİŞİ İLE HEDEF FİYAT HESAPLAMA
 
   st.subheader(f":two:**MANUEL HİSSE HESAPLAMA BÖLÜMÜ**", divider='rainbow')
