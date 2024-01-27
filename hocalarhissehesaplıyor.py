@@ -10,8 +10,8 @@ import pandas as pd
 
 
 #streamlit.config.theme.base = "dark"
-st.title(":chart:**HOCALAR HİSSE HESAPLIYOR**:chart:")
-st.subheader(":chart:**:blue[Road to Kıbrıs]** :chart:", divider='rainbow')
+st.title("**HOCALAR HİSSE HESAPLIYOR**")
+st.subheader("**:blue[Road to Kıbrıs]** :airplane_departure::sunglasses:", divider='rainbow')
 #st.set_page_config(
 # page_title="Hisse Hedef Fiyat Hesaplayıcı",
 #  page_icon="https://example.com/icon.png",
