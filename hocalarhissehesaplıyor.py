@@ -364,7 +364,7 @@ if hisse_adi:
 
   # Yıllık Net Kar
   #c7 = st.number_input("Yıllık Net Kar: ")
-  C7 = float(NetDonemKarı1.replace(",", "."))
+  c7 = float(NetDonemKarı1.replace(",", "."))
   #c7 = ("{float(NetDonemKarı):,.2f}")
   #c7 = NetDonemKarı
   #c15 = c7*2
