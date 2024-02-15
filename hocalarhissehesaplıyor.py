@@ -626,5 +626,4 @@ else:
     #  st.run()
 
 
-# run deneme.py & npx localtunnel --port 8501
-
+#!streamlit run deneme.py & npx localtunnel --port 8501
