@@ -81,22 +81,34 @@ if hisse_adi:
       # gereksiz sütunları kaldırın
       veri.drop(columns=["itemCode","itemDescEng"],inplace=True)
       # Select the first row by its index
+      ##En Son ÇEYREK
       Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
-      ozkaynaklar1 = Ozkaynaklar.iloc[0,1]
-      Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
-      ozkaynaklar_3 = Ozkaynaklar.iloc[0,2]
-      Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
-      ozkaynaklar_2 = Ozkaynaklar.iloc[0,4]
+      ozkaynaklar1 = float(Ozkaynaklar.iloc[0, 1].replace(",", "."))      
       OdenmisSermaye = veri[veri['itemDescTr'] == '  Ödenmiş Sermaye']
-      OdenmisSermaye1 = OdenmisSermaye.iloc[0,1]
+      OdenmisSermaye1 = float(OdenmisSermaye.iloc[0, 1].replace(",", "."))      
+      NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
+      NetDonemKarı1 = float(NetDonemKarı.iloc[0, 1].replace(",", "."))      
+      ##Bir Önceki Çeyrek
+      Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
+      ozkaynaklar_2 = float(Ozkaynaklar.iloc[0,2].replace(",", "."))  
+      OdenmisSermaye = veri[veri['itemDescTr'] == '  Ödenmiş Sermaye']     
+      OdenmisSermaye_2 = float(OdenmisSermaye.iloc[0, 2].replace(",", ".")) 
+      NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
+      NetDonemKarı_2 = float(NetDonemKarı.iloc[0,2].replace(",", "."))       
+      #İki Önceki Çeyrek Bilanço
+      Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
+      ozkaynaklar_3 = float(Ozkaynaklar.iloc[0,3].replace(",", "."))  
+      OdenmisSermaye = veri[veri['itemDescTr'] == '  Ödenmiş Sermaye']     
+      OdenmisSermaye_3 = float(OdenmisSermaye.iloc[0, 3].replace(",", "."))    
+      NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
+      NetDonemKarı_3 = float(NetDonemKarı.iloc[0,3].replace(",","."))      
+      ##Dört Dönem Önceki Bilanço
+      Ozkaynaklar =  veri[veri['itemDescTr'] == 'Özkaynaklar']
+      ozkaynaklar_4 = float(Ozkaynaklar.iloc[0,4].replace(",", "."))  
       OdenmisSermaye = veri[veri['itemDescTr'] == '  Ödenmiş Sermaye']
-      OdenmisSermaye_2 = OdenmisSermaye.iloc[0,4]
+      OdenmisSermaye_4 = float(OdenmisSermaye.iloc[0,4].replace(",", ".")) # 4 Dönem Önceki Bilanço
       NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
-      NetDonemKarı1 = NetDonemKarı.iloc[0,1]
-      NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
-      NetDonemKarı_3 = NetDonemKarı.iloc[0,2]
-      NetDonemKarı = veri[veri['itemDescTr'] == 'DÖNEM KARI (ZARARI)']
-      NetDonemKarı_2 = NetDonemKarı.iloc[0,4]
+      NetDonemKarı_4 = float(NetDonemKarı.iloc[0,4].replace(",","."))
 
       #print("Özkaynaklar:", ozkaynaklar1)
       #print("Ödenmiş Sermaye:", OdenmisSermaye)
@@ -300,12 +312,22 @@ if hisse_adi:
       try:
           # Access the stock data and extract the F/K value
           kapanıs = hisse_oran[stock_name]["kapanıs"].replace(",", ".")
+          st.write(f"   :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}") #, box = True)     
           fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")  # Format with dots as decimal separators
+          if fk_value != "A/D":
+            st.write(f"**:blue[HİSSE F/K ORANI:]**  {fk_value}") #, box = True)
+          else:  
+            fk_value_1 = st.number_input(f"**:blue[F/K VERİSİNE ULAŞILAMAMIŞTIR LÜTFEN F/K ORANI GİRİNİZ:]**")
+            fk_value = float(fk_value_1)
           pd_value = hisse_oran[stock_name]["pd_dd"].replace(",", ".")
-          st.write(f"   :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}") #, box = True)
-          st.write(f"**HİSSE F/K ORANI:**  {fk_value}") #, box = True)
-          st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}") #, box = True)
-                  #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
+          if pd_value != "A/D":
+            st.write(f"**:blue[HİSSE PD/DD ORANI:]**  {pd_value}") #, box = True)
+          else:  
+            pd_value_1 = st.number_input(f"**:blue[PD/DD VERİSİNE ULAŞILAMAMIŞTIR LÜTFEN PD/DD ORANI GİRİNİZ:]**")
+            pd_value = float(pd_value_1)
+          #st.write(f"**HİSSE F/K ORANI:**  {fk_value}") #, box = True)
+          #st.write(f"**HİSSE PD/DD ORANI:**  {pd_value}") #, box = True)
+          #print(f"{stock_name} Hisse Fiyatı: {kapanıs}")
           #print(f"{stock_name} F/K Oranı:  {fk_value}")
           #print(f"{stock_name} PD/DD Oranı:  {pd_value}")
           st.subheader(f"**Bilanço Verileri:**", divider='grey')
@@ -314,11 +336,12 @@ if hisse_adi:
           st.write(f"**:blue[ÖDENMİŞ SERMAYE:]**  {float(OdenmisSermaye1):,.0f}") #, box = True)
           st.write(f"**:blue[NET DÖNEM KARI:]**  {float(NetDonemKarı1):,.0f}") #, box = True)
           st.write(f"**Geçmiş Dönem Bilanço Verileri:**")
-          st.write(f"**ÖZKAYNAKLAR(Bir Önceki Çeyrek):**  {float(ozkaynaklar_3):,.0f}")
-          st.write(f"**NET DÖNEM KARI(Bir Önceki Çeyrek):**  {float(NetDonemKarı_3):,.0f}")
-          st.write(f"**ÖZKAYNAKLAR(Geçmiş Yıl ):**  {float(ozkaynaklar_2):,.0f}") #", box = True)
-          st.write(f"**ÖDENMİŞ SERMAYE(Geçmiş Yıl):**  {float(OdenmisSermaye_2):,.0f}") #, box = True)
-          st.write(f"**NET DÖNEM KARI(Geçmiş Yıl):**  {float(NetDonemKarı_2):,.0f}") #, box = True)      
+          st.write(f"**ÖZKAYNAKLAR(Bir Önceki Çeyrek):**  {float(ozkaynaklar_2):,.0f}")
+          st.write(f"**ÖZKAYNAKLAR(Bir Önceki Çeyrek):**  {float(OdenmisSermaye_2):,.0f}")         
+          st.write(f"**NET DÖNEM KARI(Bir Önceki Çeyrek):**  {float(NetDonemKarı_2):,.0f}")
+          st.write(f"**ÖZKAYNAKLAR(Geçmiş Yıl ):**  {float(ozkaynaklar_4):,.0f}") #", box = True)
+          st.write(f"**ÖDENMİŞ SERMAYE(Geçmiş Yıl):**  {float(OdenmisSermaye_4):,.0f}") #, box = True)
+          st.write(f"**NET DÖNEM KARI(Geçmiş Yıl):**  {float(NetDonemKarı_4):,.0f}") #, box = True)      
       except KeyError:
           #print("Hisse bulunamadı.") # Stock not found in the dictionary
           st.write("Hisse bulunamadı.")
@@ -335,27 +358,15 @@ if hisse_adi:
   #c3 = float(kapanıs)
   c3 = float(kapanıs.replace(",", "."))  # Replace comma with dot
 
+  # Hisse F/K Oranı
   #c10 = float(st.number_input("Hisse F/K Oranı:"))
-  c10 = float(fk_value.replace(",", "."))
+  c10 = float(fk_value) #.replace(",", "."))
   #if c10 != "A/D":
   #  c10 = st.number_input("F/K Değeri Bulunmamaktadır. Lütfen F/K Değeri Giriniz")
 
-  ##if stock_name in hisse_oran:
-    #try:
-    # fk_value = hisse_oran[stock_name]["f_k"].replace(",", ".")
-    ##c10 = float(fk_value.replace(",", "."))
-    #except KeyError:
-      #print("Hisse bulunamadı.") # Stock not found in the dictionary
-      #st.write("F/K Verisi Bulunamadı")
-  ##else:
-    #print("Bir sorun var!") # Stock not found in any of the dictionaries
-    #st.write()
-    ##c10 = st.number_input("F/K Değeri Bulunmamaktadır. Lütfen F/K Değeri Giriniz")
-
-
   # HİSSE PD/DD ORANI
   #c11 = st.number_input("Hisse PD/DD Oranı: ")
-  c11 = float(pd_value)
+  c11 = float(pd_value) #.replace(",", "."))
 
   # BİST100 /SEKTÖR GÜNCEL F/K ORANI
   #c12 = float(st.number_input("BİST100 / Sektör Güncel F/K Oranı: "))
@@ -366,25 +377,34 @@ if hisse_adi:
   c13 = sek_ortalama_pd_float
 
   # Ödenmiş Sermaye
-  #c4 = st.number_input("Ödenmiş Sermaye: ")
-  c4 = float(OdenmisSermaye1)
-  #c4 = ("{float(OdenmisSermaye):,.2f}")
-  #c4 = OdenmisSermaye
+  ##c4 = st.number_input("Ödenmiş Sermaye: ")
+  c4 = float(OdenmisSermaye1) #Otomatik Veri İşlem İçin Bu Satır
+  c4_2 = float(OdenmisSermaye_2) #Otomatik Veri İşlem İçin Bu Satır
+  c4_3 = float(OdenmisSermaye_3) #Otomatik Veri İşlem İçin Bu Satır
+  c4_4 = float(OdenmisSermaye_4) #Otomatik Veri İşlem İçin Bu Satır
+  
+  ###c4 = ("{float(OdenmisSermaye):,.2f}")
+  ####c4 = float(OdenmisSermaye.replace(",", "."))
 
   # Yıllık Net Kar
-  #c7 = st.number_input("Yıllık Net Kar: ")
-  c7 = float(NetDonemKarı1.replace(",", "."))
-  #c7 = ("{float(NetDonemKarı):,.2f}")
-  #c7 = NetDonemKarı
+  ##c7 = st.number_input("Yıllık Net Kar: ")
+  c7 = float(NetDonemKarı1) #Otomatik Veri İşlem İçin Bu Satır
+  c7_2 = float(NetDonemKarı_2)
+  c7_3 = float(NetDonemKarı_3)
+  c7_4 = float(NetDonemKarı_4)
+    ###c7 = ("{float(NetDonemKarı1):,.2f}")
+  ###c7 = float(NetDonemKarı1.replace(",", "."))
   #c15 = c7*2
   #st.write(c15)
 
   # Özsermaye
-  #c8 = st.number_input("Özsermaye : ")
-  c8 = float(ozkaynaklar1)
-  #c8 = (f"{float(ozkaynaklar1):,.2f}")
-  #c8 = ozkaynaklar1
-
+  ##c8 = st.number_input("Özsermaye : ")
+  c8 = float(ozkaynaklar1) #Otomatik Veri İşlem İçin Bu Satır
+  c8_2 = float(ozkaynaklar_2)
+  c8_3 = float(ozkaynaklar_3)
+  c8_4 = float(ozkaynaklar_4)
+  ###c8 = (f"{float(ozkaynaklar1):,.2f}")
+  ###c8 = float(ozkaynaklar1.replace(",", "."))
 
   # Güncel Piyasa Değeri
   #c9 = st.number_input("Güncel Piyasa Değeri: ")
@@ -433,66 +453,120 @@ if hisse_adi:
   #st.write(f"**NET DÖNEM KARI(Geçmiş Yıl):**  {float(NetDonemKarı_2):,.0f}") #, box = True)
 
     # Özsermaye
-  c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**", value=None, placeholder="Özkaynaklar (Özsermaye) tutarını bu alana yazın") #{float(ozkaynaklar1):,.0f}")
+##  c8 = st.number_input(f"**Özkaynaklar (Özsermaye):**", value=None, placeholder="Özkaynaklar (Özsermaye) tutarını bu alana yazın") #{float(ozkaynaklar1):,.0f}")
 
     # Ödenmiş Sermaye
-  c4 = st.number_input("**Ödenmiş Sermaye:**", value=None, placeholder="Ödenmiş Sermaye tutarını bu alana yazın")
+##  c4 = st.number_input("**Ödenmiş Sermaye:**", value=None, placeholder="Ödenmiş Sermaye tutarını bu alana yazın")
 
     # Yıllık Net Kar
-  c7 = st.number_input("**Yıllık Net Kar:**", value=None, placeholder="Yıllık Net Kar tutarını bu alana yazın")
+##  c7 = st.number_input("**Yıllık Net Kar:**", value=None, placeholder="Yıllık Net Kar tutarını bu alana yazın")
   #with st.sidebar:
-    
-  operation = st.selectbox(":blue[**HİSSE FİYAT HESAPLAMARI İÇİN İŞLEM SEÇİN:**]", ["İŞLEM SEÇİN", "F/K HEDEF FİYAT", "PD/DD HEDEF FİYAT", "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT", "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT", "TÜM HESAPLAMALARIN SONUÇLARINI GÖSTER"])
+
+###Geçmiş Dönem Bilanço Verileri
+###       st.write(f"**ÖZKAYNAKLAR(Bir Önceki Çeyrek):**  {float(ozkaynaklar_3):,.0f}")
+###       st.write(f"**NET DÖNEM KARI(Bir Önceki Çeyrek):**  {float(NetDonemKarı_3):,.0f}")
+###       st.write(f"**ÖZKAYNAKLAR(Geçmiş Yıl ):**  {float(ozkaynaklar_2):,.0f}") #", box = True)
+###       st.write(f"**ÖDENMİŞ SERMAYE(Geçmiş Yıl):**  {float(OdenmisSermaye_2):,.0f}") #, box = True)
+###       st.write(f"**NET DÖNEM KARI(Geçmiş Yıl):**  {float(NetDonemKarı_2):,.0f}") #, box = True)
+
+  operation = st.selectbox(":blue[**HİSSE FİYAT HESAPLAMARI İÇİN İŞLEM SEÇİN:**]", ["İŞLEM SEÇİN", "1. Çeyrek Bilançosuna Göre Hisse Oranları", "2. Çeyrek Bilançosuna Göre Hisse Oranları", "3. Çeyrek Bilançosuna Göre Hisse Oranları", "4. Çeyrek Bilançosuna Göre Hisse Oranları"])
   #if operation == "Tüm Hedef Fiyatları Göster":
   if operation == "İŞLEM SEÇİN":
     st.write(f"İŞLEM SEÇİN")
     #st.write(f":red[Aşağıdaki kırmızı uyarı yazısı veriler girilmediği için çıkmaktadır. Lütfen verileri girip yapmak istediğiniz işlemi seçin.]")
 
-  elif operation == "F/K HEDEF FİYAT":
-    if c10 != 0:
-      fk_hedef_fiyat = c3 / c10 * c12
-    else:
-      fk_hedef_fiyat = 0
-    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
-    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
-
-  elif operation == "PD/DD HEDEF FİYAT":
-    if c11 != 0:
-      pd_hedef_fiyat = c3 / c11 * c13
-    else:
-      pd_hedef_fiyat = 0
-    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
-    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
-
-  elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-    if c4 != 0:
-      odenmis_hedef_fiyat = (c7 / c4) * c10
-    #else:
-      #odenmis_hedef_fiyat = 0
-      st.write(f":blue[ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:] {odenmis_hedef_fiyat:,.2f}")
-      st.write(f"   :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
-  #elif operation == "ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT":
-    #st.write(f"ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT: {odenmis_hedef_fiyat:,.2f}")
-      st.write(f":red[Not: Hisse verilerini kontrol ediniz. Eksik veri nedeniyle altta kırmızı alanda hata mesajı çıkmaktadır]")
-  elif operation == "ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT":
-    #if c10 != 0:
-    ozsermaye_hf = (c7/c8)*10/c11*c3
-    st.write(f":blue[ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT]: {ozsermaye_hf:,.2f}")
-    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
-    st.write(f":red[Not: Hisse verilerini kontrol ediniz. Eksik veri nedeniyle altta kırmızı alanda hata mesajı çıkmaktadır]")
-  elif operation == "TÜM HESAPLAMALARIN SONUÇLARINI GÖSTER":
-    c21 = (c7*7)+(c8*0.5)
+  elif operation == "1. Çeyrek Bilançosuna Göre Hisse Oranları":
+    c7_1 = c7*4 ## Yılsonu Net Kar Tahmini
+    c10_f = c7/c4
+    c16_1 = c7_1 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
+    #c16 =  c7 / c4     ## EPS(Hisse Başı Kazanç)
+    c17_1 = c3 / c16_1 ## Yılsonu F/K Oranı Tahmini
+    c21 = (c7_1*7)+(c8*0.5)
     potansiyel_fiyat = c21/c4
-    st.write(f":blue[**POTANSİYEL DEĞERİNE GÖRE HİSSE FİYATI:**] {potansiyel_fiyat:,.2f}")
-    #st.write(f":red[Not: Hisse verilerini kontrol ediniz. Eksik veri nedeniyle altta kırmızı alanda hata mesajı çıkmaktadır]")
-  #operation = st.selectbox("[ORTALAMA HEDEF FİYAT]")
+    future_fk = (c3/c17_1)*c12
     fk_hedef_fiyat = c3 / c10 * c12
     pd_hedef_fiyat = c3 / c11 * c13
-    ozsermaye_hf = (c7/c8)*10/c11*c3
+    ozsermaye_hf = (c7/c8)*10/c11*c3 ##Yılsonu Tahmini Özsermaye Karlılığına Göre Hedef Fiyat
     odenmis_hedef_fiyat = (c7 / c4) * c10
+    ortalama_hesap = ( fk_hedef_fiyat + future_fk + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+    st.write(f":blue[**Potansiyel Piyasa Değerine Göre Olması Gereken Fiyat:**] { potansiyel_fiyat :,.2f}")    
+    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+    st.write(f":blue[**YILSONU TAHMİNİ F/K HEDEF FİYATI:**] {future_fk:,.2f}")
+    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+    st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")  
+
+  elif operation == "2. Çeyrek Bilançosuna Göre Hisse Oranları":
+    c7_2 = c7*2 ## Yılsonu Net Kar Tahmini
+    c10_f = c7/c4
+    c16_2 = c7_2 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
+    #c16 =  c7 / c4     ## EPS(Hisse Başı Kazanç)
+    c17_2 = c3 / c16_2 ## Yılsonu F/K Oranı Tahmini
+    c21 = (c7_2*7)+(c8*0.5)
+    potansiyel_fiyat = c21/c4
+    future_fk = (c3/c17_2)*c12
+    fk_hedef_fiyat = c3 / c10 * c12
+    pd_hedef_fiyat = c3 / c11 * c13
+    ozsermaye_hf = (c7/c8)*10/c11*c3 ##Yılsonu Tahmini Özsermaye Karlılığına Göre Hedef Fiyat
+    odenmis_hedef_fiyat = (c7 / c4) * c10
+    ortalama_hesap = ( fk_hedef_fiyat + future_fk + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+    st.write(f":blue[**Potansiyel Piyasa Değerine Göre Olması Gereken Fiyat:**] { potansiyel_fiyat :,.2f}")    
+    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+    st.write(f":blue[**YILSONU TAHMİNİ F/K HEDEF FİYATI:**] {future_fk:,.2f}")
+    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+    st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")  
+
+  elif operation == "3. Çeyrek Bilançosuna Göre Hisse Oranları":
+    c6 = c7/3
+    c7_3 = c7+c6 ## Yılsonu Net Kar Tahmini
+    c10_f = c7/c4
+    c16_3 = c7_2 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
+    #c16 =  c7 / c4     ## EPS(Hisse Başı Kazanç)
+    c17_3 = c3 / c16_3 ## Yılsonu F/K Oranı Tahmini
+    c21 = (c7_3*7)+(c8*0.5)
+    potansiyel_fiyat = c21/c4
+    future_fk = (c3/c17_3)*c12
+    fk_hedef_fiyat = c3 / c10 * c12
+    pd_hedef_fiyat = c3 / c11 * c13
+    ozsermaye_hf = (c7_3/c8)*10/c11*c3 ##Yılsonu Tahmini Özsermaye Karlılığına Göre Hedef Fiyat
+    odenmis_hedef_fiyat = (c7_3 / c4) * c10
+    ortalama_hesap = ( fk_hedef_fiyat + future_fk + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+    st.write(f":blue[**Potansiyel Piyasa Değerine Göre Olması Gereken Fiyat:**] { potansiyel_fiyat :,.2f}")    
+    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+    st.write(f":blue[**YILSONU TAHMİNİ F/K HEDEF FİYATI:**] {future_fk:,.2f}")
+    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+    st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
+
+  elif operation == "4. Çeyrek Bilançosuna Göre Hisse Oranları":
+    #c7_3 = c7+c6 ## Yılsonu Net Kar Tahmini
+    c16_4 = c7 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
+    #c16 =  c7 / c4     ## EPS(Hisse Başı Kazanç)
+    c17 = c3 / c16_4 ## Yılsonu F/K Oranı Tahmini
     c21 = (c7*7)+(c8*0.5)
     potansiyel_fiyat = c21/c4
-    ortalama_hesap = ( fk_hedef_fiyat + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+    future_fk = (c3/c17)*c12
+    fk_hedef_fiyat = c3 / c10 * c12
+    pd_hedef_fiyat = c3 / c11 * c13
+    ozsermaye_hf = (c7/c8)*10/c11*c3 ##Yılsonu Tahmini Özsermaye Karlılığına Göre Hedef Fiyat
+    odenmis_hedef_fiyat = (c7 / c4) * c10
+    ortalama_hesap = ( fk_hedef_fiyat + future_fk + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+    st.write(f":blue[**Potansiyel Piyasa Değerine Göre Olması Gereken Fiyat:**] { potansiyel_fiyat :,.2f}")    
+    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+    st.write(f":blue[**YILSONU TAHMİNİ F/K HEDEF FİYATI:**] {future_fk:,.2f}")
+    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+    st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+    st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")    
+      
   #if operation == "ORTALAMA HEDEF FİYAT":
   #st.write(ortalama_hesap)
   #if ortalama_hesap < kapanıs :
@@ -500,17 +574,51 @@ if hisse_adi:
   #else :
     #st.write(f"**TÜM HESAPLAMALARIN ORTALAMA FİYATI:** :green[{ortalama_hesap:,.2f}]")
   #elif operation == "TÜM HESAPLAMALARIN SONUÇLARINI GÖSTER":
-    st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
-    st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
-    st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
-    st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
-    st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
-    st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
+    #st.write(f":blue[**Güncel EPS (Hisse Başı Kazanç):**] { c16 :,.2f}")
+    #st.write(f":blue[**Yılsonu EPS (Hisse Başı Kazanç) Tahmini:**] { c16_3 :,.2f}")    
+    #st.write(f":blue[**Güncel F/K:**] { c17 :,.2f}")
+    #st.write(f":blue[**Potansiyel Piyasa Değerine Göre Olması Gereken Fiyat:**] { potansiyel_fiyat :,.2f}")    
+    #st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+    #st.write(f":blue[**YILSONU TAHMİNİ F/K HEDEF FİYATI:**] {fk_hedef_fiyat:,.2f}")
+    #st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+    #st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+    #st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+    #st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+    #st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
+   
+  
+  
+  ##elif operation == "TÜM HESAPLAMALARIN SONUÇLARINI GÖSTER":
+  ##  c21 = (c7*7)+(c8*0.5)
+  ##  potansiyel_fiyat = c21/c4
+  ##  st.write(f":blue[**POTANSİYEL DEĞERİNE GÖRE HİSSE FİYATI:**] {potansiyel_fiyat:,.2f}")
+  ##  #st.write(f":red[Not: Hisse verilerini kontrol ediniz. Eksik veri nedeniyle altta kırmızı alanda hata mesajı çıkmaktadır]")
+  #operation = st.selectbox("[ORTALAMA HEDEF FİYAT]")
+  ##  fk_hedef_fiyat = c3 / c10 * c12
+  ##  pd_hedef_fiyat = c3 / c11 * c13
+  ##  ozsermaye_hf = (c7/c8)*10/c11*c3
+  ##  odenmis_hedef_fiyat = (c7 / c4) * c10
+  ##  c21 = (c7*7)+(c8*0.5)
+  ##  potansiyel_fiyat = c21/c4
+  ##  ortalama_hesap = ( fk_hedef_fiyat + pd_hedef_fiyat + odenmis_hedef_fiyat + ozsermaye_hf + potansiyel_fiyat ) / 5
+  #if operation == "ORTALAMA HEDEF FİYAT":
+  #st.write(ortalama_hesap)
+  #if ortalama_hesap < kapanıs :
+    #st.write(f":blue[**TÜM HESAPLAMALARIN ORTALAMA FİYATI:**] {ortalama_hesap:,.2f}")
+  #else :
+    #st.write(f"**TÜM HESAPLAMALARIN ORTALAMA FİYATI:** :green[{ortalama_hesap:,.2f}]")
+  #elif operation == "TÜM HESAPLAMALARIN SONUÇLARINI GÖSTER":
+  ##  st.write(f":blue[**F/K HEDEF FİYAT:**] {fk_hedef_fiyat:,.2f}")
+  ##  st.write(f":blue[**PD/DD HEDEF FİYAT:**] {pd_hedef_fiyat:,.2f}")
+  ##  st.write(f":blue[**ÖDENMİŞ SERMAYEYE GÖRE HEDEF FİYAT:**] {odenmis_hedef_fiyat:,.2f}")
+  ##  st.write(f":blue[**ÖZSERMAYE KARLILIĞINA GÖRE HEDEF FİYAT**]: {ozsermaye_hf:,.2f}")
+  ##  st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
+  ##  st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
    
 
 else:
   st.write(":arrow_up:","Lütfen Yukarıdaki Alana Hisse Yazınız",":arrow_up:")
-  st.write("(Not: Bankalar İşleme Dahil Değildir)")
+  st.write(":red[(Not: Bankalar İşleme Dahil Değildir)]")
 
 
 
@@ -518,4 +626,5 @@ else:
     #  st.run()
 
 
-#!streamlit run deneme.py & npx localtunnel --port 8501
+# run deneme.py & npx localtunnel --port 8501
+
