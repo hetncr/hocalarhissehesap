@@ -618,7 +618,7 @@ if hisse_adi:
 
 else:
   st.write(":arrow_up:","Lütfen Yukarıdaki Alana Hisse Yazınız",":arrow_up:")
-  st.write(":red[(Not: Bankalar İşleme Dahil Değildir)]")
+  st.write("(Not: Bankalar İşleme Dahil Değildir)")
 
 
 
