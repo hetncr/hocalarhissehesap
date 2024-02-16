@@ -469,13 +469,12 @@ if hisse_adi:
 ###       st.write(f"**ÖDENMİŞ SERMAYE(Geçmiş Yıl):**  {float(OdenmisSermaye_2):,.0f}") #, box = True)
 ###       st.write(f"**NET DÖNEM KARI(Geçmiş Yıl):**  {float(NetDonemKarı_2):,.0f}") #, box = True)
 
-  operation = st.selectbox(":blue[**HİSSE FİYAT HESAPLAMARI İÇİN İŞLEM SEÇİN:**]", ["İŞLEM SEÇİN", "1. Çeyrek Bilançosuna Göre Hisse Oranları", "2. Çeyrek Bilançosuna Göre Hisse Oranları", "3. Çeyrek Bilançosuna Göre Hisse Oranları", "4. Çeyrek Bilançosuna Göre Hisse Oranları"])
-  #if operation == "Tüm Hedef Fiyatları Göster":
+  operation = st.selectbox(":blue[**HİSSE FİYAT HESAPLAMARI İÇİN İŞLEM SEÇİN:**]", ["İŞLEM SEÇİN", "1. Çeyrek Bilanço Hisse Oranları-3 Aylık", "2. Çeyrek Bilanço Hisse Oranları-6 Aylık", "3. Çeyrek Bilanço Hisse Oranları-9 Aylık", "4. Çeyrek Bilanço Hisse Oranları-12 Aylık"])
   if operation == "İŞLEM SEÇİN":
     st.write(f"İŞLEM SEÇİN")
     #st.write(f":red[Aşağıdaki kırmızı uyarı yazısı veriler girilmediği için çıkmaktadır. Lütfen verileri girip yapmak istediğiniz işlemi seçin.]")
 
-  elif operation == "1. Çeyrek Bilançosuna Göre Hisse Oranları":
+  elif operation == "1. Çeyrek Bilanço Hisse Oranları-3 Aylık":
     c7_1 = c7*4 ## Yılsonu Net Kar Tahmini
     c10_f = c7/c4
     c16_1 = c7_1 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
@@ -498,7 +497,7 @@ if hisse_adi:
     st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
     st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")  
 
-  elif operation == "2. Çeyrek Bilançosuna Göre Hisse Oranları":
+  elif operation == "2. Çeyrek Bilanço Hisse Oranları-6 Aylık":
     c7_2 = c7*2 ## Yılsonu Net Kar Tahmini
     c10_f = c7/c4
     c16_2 = c7_2 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
@@ -521,7 +520,7 @@ if hisse_adi:
     st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
     st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")  
 
-  elif operation == "3. Çeyrek Bilançosuna Göre Hisse Oranları":
+  elif operation == "3. Çeyrek Bilanço Hisse Oranları-9 Aylık":
     c6 = c7/3
     c7_3 = c7+c6 ## Yılsonu Net Kar Tahmini
     c10_f = c7/c4
@@ -545,7 +544,7 @@ if hisse_adi:
     st.write(f":chart:**:blue[TÜM HESAPLAMALARIN ORTALAMA FİYATI:]** {ortalama_hesap:,.2f}")
     st.write(f" :chart:**:blue[HİSSE FİYATI:]**  {kapanıs}")
 
-  elif operation == "4. Çeyrek Bilançosuna Göre Hisse Oranları":
+  elif operation == "4. Çeyrek Bilanço Hisse Oranları-12 Aylık":
     #c7_3 = c7+c6 ## Yılsonu Net Kar Tahmini
     c16_4 = c7 / c4 ## Yılsonu EPS(Hisse Başı Kazanç) Tahmini
     #c16 =  c7 / c4     ## EPS(Hisse Başı Kazanç)
