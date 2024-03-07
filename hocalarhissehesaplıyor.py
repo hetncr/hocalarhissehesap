@@ -130,13 +130,11 @@ if hisse_adi:
 
   tdv = "https://tr.tradingview.com/symbols/BIST-"+hisse_adi
   isyatırım ="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+hisse_adi
-  st.write(" İş Yatırım Sayfası İçin Tıklayın: ") #[link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/default.aspx)")  st.link_button("İş Yatırım",isyatırım)
-  st.link_button("İş Yatırım",isyatırım)
-  st.write(" Tradingview Grafik Sayfası İçin Tıklayın: ")  #[link](tdv))  
-  st.link_button("Tradingview", tdv)
-  #st.write(" İş Yatırım Sayfası İçin Tıklayın: [link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/default.aspx)")
-  #st.write(" Tradingview Grafik Sayfası İçin Tıklayın: [link](https://tr.tradingview.com/chart/)")
-
+  col1, col2 = st.columns([1,1])
+  with col1:
+    st.link_button("İş Yatırım Sayfası İçin Tıklayın",isyatırım) #st.button('1')
+  with col2:
+    st.link_button("Tradingview Sayfası İçin Tıklayın", tdv) #st.button('2')
 
   with st.sidebar:
   #Gelecek Özkaynak Tahmini Miktarı
