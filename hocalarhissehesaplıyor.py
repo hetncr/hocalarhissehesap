@@ -695,16 +695,6 @@ if hisse_adi:
 else:
   st.write(":arrow_up:","Lütfen Yukarıdaki Alana Hisse Yazınız",":arrow_up:")
   st.write("(Not: Bankalar İşleme Dahil Değildir)")
-
-
-
-  
-  tdv = "https://tr.tradingview.com/symbols/BIST-"+hisse_adi
-  isyatırım ="https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/sirket-karti.aspx?hisse="+hisse_adi
-  st.write(" İş Yatırım Sayfası İçin Tıklayın: ") #[link](https://www.isyatirim.com.tr/tr-tr/analiz/hisse/Sayfalar/default.aspx)")  st.link_button("İş Yatırım",isyatırım)
-  st.link_button("İş Yatırım",isyatırım)
-  st.write(" Tradingview Grafik Sayfası İçin Tıklayın: ")  #[link](tdv))  
-  st.link_button("Tradingview", tdv)
   
     #if __name__ == "__main__":
     #  st.run()
